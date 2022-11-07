@@ -1,2 +1,0 @@
-module MJC_POS {
-}
