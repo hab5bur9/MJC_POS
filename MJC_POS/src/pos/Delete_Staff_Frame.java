@@ -3,6 +3,14 @@ import java.awt.*;
 import javax.swing.*;
 import java.awt.event.*;
 
+class DeleteEvent2 implements ActionListener{
+	
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		
+	}
+}
+
 public class Delete_Staff_Frame extends JFrame {
 	
 	String info[]= {"10hours n만원 Park","20hours n만원 Lee","33hours n만원 Choi",
@@ -33,6 +41,8 @@ public class Delete_Staff_Frame extends JFrame {
 		btn_panel.setLayout(new FlowLayout());
 		btn_panel.add(Delete);
 		btn_panel.add(btn_backMain);
+		
+	
 		
 		for(int i=0;i<info.length;i++) {
 			
