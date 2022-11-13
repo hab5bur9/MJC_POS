@@ -21,5 +21,4 @@ public final class final_String {
 	public static final String[] CALCULOR = {"-10","-1","+1","+10"};
 	
 	
-	
 }
