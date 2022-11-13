@@ -13,7 +13,7 @@ public class Delete_Staff_Frame extends JFrame {
 	
 		for(int i=0;i<info.length;i++) {
 			JRadioButton staff_button=new JRadioButton();
-			JPanel staff_paneli=new JPanel();//asdasd
+			JPanel staff_paneli=new JPanel();
 		}
 	}
 	public static void main(String[] args) {
