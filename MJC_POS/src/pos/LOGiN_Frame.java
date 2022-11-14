@@ -21,9 +21,8 @@ public class LOGiN_Frame extends JFrame implements ActionListener{
 
 		JTextField ID_tf = new JTextField(10);
 		JPasswordField PW_tf = new JPasswordField(10);
-		//��ư �̺�Ʈ�� ����ϱ� ���� ���������� ����
+		
 	LOGiN_Frame(){
-		//占쏙옙튼 占싱븝옙트占쏙옙 占쏙옙占쏙옙歐占� 占쏙옙占쏙옙 占쏙옙占쏙옙占쏙옙占쏙옙占쏙옙 占쏙옙占쏙옙
 		
 		setTitle("MJC Pos");
 		
