@@ -32,8 +32,10 @@ public class order_page extends JFrame{
 				jtf_totalPrice;
 	private JTextArea jta_productInformation;
 	
-	//private JPanel panelWest,panelCenter,panelEast;
-	private int n =10;
+	private JPanel panelWest,panelCenter,panelEast;
+	
+
+
 	
 	public order_page() {
 		mkSetting(); // make page setting
