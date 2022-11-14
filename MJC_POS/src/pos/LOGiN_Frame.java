@@ -16,13 +16,13 @@ import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 
 
-public class LOGIN_Frame extends JFrame implements ActionListener{
+public class LOGiN_Frame extends JFrame implements ActionListener{
 
 
 		JTextField ID_tf = new JTextField(10);
 		JPasswordField PW_tf = new JPasswordField(10);
-		//¹öÆ° ÀÌº¥Æ®¸¦ »ç¿ëÇÏ±â À§ÇØ Àü¿ªº¯¼ö·Î ¼³Á¤
-	LOGIN_Frame(){
+		//ï¿½ï¿½Æ° ï¿½Ìºï¿½Æ®ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Ï±ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+	LOGiN_Frame(){
 		
 		setTitle("MJC Pos");
 		
@@ -32,15 +32,15 @@ public class LOGIN_Frame extends JFrame implements ActionListener{
 		JPanel TextField_panel = new JPanel();
 		
 		JLabel Pos = new JLabel("MJC POS");
-		JLabel ID = new JLabel("ID ÀÔ·Â : ");
-		JLabel PW = new JLabel("PW ÀÔ·Â :");
-		JLabel Img = new JLabel(new ImageIcon("C:\\Users\\user\\Desktop\\¸íÁö³ª¹«.png"));
+		JLabel ID = new JLabel("ID ï¿½Ô·ï¿½ : ");
+		JLabel PW = new JLabel("PW ï¿½Ô·ï¿½ :");
+		JLabel Img = new JLabel(new ImageIcon("C:\\Users\\user\\Desktop\\ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½.png"));
 			
-		JButton Login = new JButton("   ·Î±×ÀÎ    ");
-		JButton Cancel = new JButton("     Ãë¼Ò     ");		
-		JButton Reset = new JButton("          ºñ¹Ð¹øÈ£  ÃÊ±âÈ­           ");
+		JButton Login = new JButton("   ï¿½Î±ï¿½ï¿½ï¿½    ");
+		JButton Cancel = new JButton("     ï¿½ï¿½ï¿½     ");		
+		JButton Reset = new JButton("          ï¿½ï¿½Ð¹ï¿½È£  ï¿½Ê±ï¿½È­           ");
 		
-		PW_tf.setEchoChar('*'); //ºñ¹Ð¹øÈ£ ÀÔ·ÂÃ¢¿¡ *·Î Âï±â À§ÇÔ
+		PW_tf.setEchoChar('*'); //ï¿½ï¿½Ð¹ï¿½È£ ï¿½Ô·ï¿½Ã¢ï¿½ï¿½ *ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 		
 		Login_ActionListener Login_A = new Login_ActionListener ();
 	    Login.addActionListener(Login_A);
@@ -58,21 +58,21 @@ public class LOGIN_Frame extends JFrame implements ActionListener{
 		Main_panel.add(TextField_panel);
 		TextField_panel.setBackground(Color.white);
 		Main_panel.setLayout(null);
-		MJC_panel.setLayout(new FlowLayout(FlowLayout.CENTER , 0 , 17)); // ÀÌ¹ÌÁö ¹× Á¦¸ñ ÆÇ³Ú
-		Button_panel.setLayout(new FlowLayout(FlowLayout.CENTER , 10 , 5)); // ¹öÆ° ¸ðÀ½ ÆÇ³Ú
-		TextField_panel.setLayout(new FlowLayout(FlowLayout.CENTER , 10, 10)); // ID , PW ÀÔ·Â ¶óº§ ¸ðÀ½ ÆÇ³Ú
+		MJC_panel.setLayout(new FlowLayout(FlowLayout.CENTER , 0 , 17)); // ï¿½Ì¹ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ç³ï¿½
+		Button_panel.setLayout(new FlowLayout(FlowLayout.CENTER , 10 , 5)); // ï¿½ï¿½Æ° ï¿½ï¿½ï¿½ï¿½ ï¿½Ç³ï¿½
+		TextField_panel.setLayout(new FlowLayout(FlowLayout.CENTER , 10, 10)); // ID , PW ï¿½Ô·ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ç³ï¿½
 		
 		MJC_panel.setBounds(40 , 40 , 120 , 200);
 		MJC_panel.add(Img);
 		MJC_panel.add(Pos);
-		Pos.setFont(new Font("¸¼Àº °íµñ" , Font.BOLD , 22));
+		Pos.setFont(new Font("ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½" , Font.BOLD , 22));
 		
 		TextField_panel.setBounds(160 , 60 , 210 , 100);
 		TextField_panel.add(ID);
-		ID.setFont(new Font("¸¼Àº °íµñ" , Font.BOLD , 15));
+		ID.setFont(new Font("ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½" , Font.BOLD , 15));
 		TextField_panel.add(ID_tf);
 		TextField_panel.add(PW);
-		PW.setFont(new Font("¸¼Àº °íµñ" , Font.BOLD , 15));
+		PW.setFont(new Font("ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½" , Font.BOLD , 15));
 		TextField_panel.add(PW_tf);
 			
 		Button_panel.setBounds(160,145,210,100);
@@ -92,10 +92,14 @@ public class LOGIN_Frame extends JFrame implements ActionListener{
 		setLocationRelativeTo(null);
 	
 	}
+	public void actionPerformed(ActionEvent ae) {
+		
+	}
+
 class Login_ActionListener implements ActionListener{
 		
 		public void actionPerformed(ActionEvent e) {
-		JOptionPane.showMessageDialog(null, "·Î±×ÀÎ µÇ¾ú½À´Ï´Ù.");
+		JOptionPane.showMessageDialog(null, "ï¿½Î±ï¿½ï¿½ï¿½ ï¿½Ç¾ï¿½ï¿½ï¿½ï¿½Ï´ï¿½.");
 		}
 	}
 class Cancel_ActionListener implements ActionListener{
@@ -116,7 +120,8 @@ class PW_F_ActionListener implements ActionListener{
 
 	public static void main(String[] args) {
 		
-		new LOGIN_Frame();
+		new LOGiN_Frame();
 	}
 
 }
+

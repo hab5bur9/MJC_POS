@@ -6,4 +6,6 @@ public final class final_Test {
 		
 		
 		public static final String TESTEXAMPLE = "이거 보이시나요";
+		
+		public static final String TESTSTRING = "덮어쓰기인듯?";
 }
