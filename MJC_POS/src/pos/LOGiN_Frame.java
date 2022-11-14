@@ -21,7 +21,7 @@ public class LOGIN_Frame extends JFrame implements ActionListener{
 
 		JTextField ID_tf = new JTextField(10);
 		JPasswordField PW_tf = new JPasswordField(10);
-		//��ư �̺�Ʈ�� ����ϱ� ���� ���������� ����
+		//占쏙옙튼 占싱븝옙트占쏙옙 占쏙옙占쏙옙歐占� 占쏙옙占쏙옙 占쏙옙占쏙옙占쏙옙占쏙옙占쏙옙 占쏙옙占쏙옙
 	LOGIN_Frame(){
 		
 		setTitle("MJC Pos");
@@ -32,15 +32,15 @@ public class LOGIN_Frame extends JFrame implements ActionListener{
 		JPanel TextField_panel = new JPanel();
 		
 		JLabel Pos = new JLabel("MJC POS");
-		JLabel ID = new JLabel(LOGIN_ID);
-		JLabel PW = new JLabel(LOGIN_PW);
-		JLabel Img = new JLabel(new ImageIcon("C:\\Users\\user\\Desktop\\��������.png"));
+		JLabel ID = new JLabel(final_String.LOGIN_ID);
+		JLabel PW = new JLabel(final_String.LOGIN_PW);
+		JLabel Img = new JLabel(new ImageIcon("C:\\Users\\user\\Desktop\\占쏙옙占쏙옙占쏙옙占쏙옙.png"));
 			
-		JButton Login = new JButton(LOGIN_LOGIN);
-		JButton Cancel = new JButton(LOGIN_CANCLE);
-		JButton Reset = new JButton(LOGIN_RESET);
+		JButton Login = new JButton(final_String.LOGIN_LOGIN);
+		JButton Cancel = new JButton(final_String.LOGIN_CANCLE);
+		JButton Reset = new JButton(final_String.LOGIN_RESET);
 		
-		PW_tf.setEchoChar('*'); //��й�ȣ �Է�â�� *�� ��� ����
+		PW_tf.setEchoChar('*'); //占쏙옙橘占싫� 占쌉뤄옙창占쏙옙 *占쏙옙 占쏙옙占� 占쏙옙占쏙옙
 		
 		Login_ActionListener Login_A = new Login_ActionListener ();
 	    Login.addActionListener(Login_A);
@@ -58,9 +58,9 @@ public class LOGIN_Frame extends JFrame implements ActionListener{
 		Main_panel.add(TextField_panel);
 		TextField_panel.setBackground(Color.white);
 		Main_panel.setLayout(null);
-		MJC_panel.setLayout(new FlowLayout(FlowLayout.CENTER , 0 , 17)); // �̹��� �� ���� �ǳ�
-		Button_panel.setLayout(new FlowLayout(FlowLayout.CENTER , 10 , 5)); // ��ư ���� �ǳ�
-		TextField_panel.setLayout(new FlowLayout(FlowLayout.CENTER , 10, 10)); // ID , PW �Է� �� ���� �ǳ�
+		MJC_panel.setLayout(new FlowLayout(FlowLayout.CENTER , 0 , 17)); // 占싱뱄옙占쏙옙 占쏙옙 占쏙옙占쏙옙 占실놂옙
+		Button_panel.setLayout(new FlowLayout(FlowLayout.CENTER , 10 , 5)); // 占쏙옙튼 占쏙옙占쏙옙 占실놂옙
+		TextField_panel.setLayout(new FlowLayout(FlowLayout.CENTER , 10, 10)); // ID , PW 占쌉뤄옙 占쏙옙 占쏙옙占쏙옙 占실놂옙
 		
 		MJC_panel.setBounds(40 , 40 , 120 , 200);
 		MJC_panel.add(Img);
@@ -95,7 +95,7 @@ public class LOGIN_Frame extends JFrame implements ActionListener{
 class Login_ActionListener implements ActionListener{
 		
 		public void actionPerformed(ActionEvent e) {
-		JOptionPane.showMessageDialog(null, "�α��� �Ǿ����ϴ�.");
+		JOptionPane.showMessageDialog(null, "로그인 되었습니다.");
 		}
 	}
 class Cancel_ActionListener implements ActionListener{
