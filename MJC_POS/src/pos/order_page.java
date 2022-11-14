@@ -32,13 +32,12 @@ public class order_page extends JFrame{
 				jtf_totalPrice;
 	private JTextArea jta_productInformation;
 	
-	private JPanel panelWest,panelCenter,panelEast;
+	//private JPanel panelWest,panelCenter,panelEast;
 	
 	public order_page() {
 		mkSetting(); // make page setting
 		mkSwings(); // make Swings components
 	    mkPanels();//panel create and add
-		
 	}
 	private JPanel mkCalculor() { // 계산 버튼 생성 메서드
 		JPanel ex = new JPanel(new GridLayout(1,final_String.CALCULOR.length));
