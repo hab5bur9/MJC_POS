@@ -39,7 +39,7 @@ public class order_page extends JFrame{
 		mkSwings(); // make Swings components
 	    mkPanels();//panel create and add
 	}
-	private JPanel mkCalculor() { // 계산 버튼 생성 메서드
+	/*private JPanel mkCalculor() { // 계산 버튼 생성 메서드
 		JPanel ex = new JPanel(new GridLayout(1,final_String.CALCULOR.length));
 		btn_calNum = new JButton[final_String.CALCULOR.length];
 		
@@ -49,7 +49,7 @@ public class order_page extends JFrame{
 		}
 		return ex;
 		
-	}
+	}*/
 	private void mkSetting() { // 페이지 크기 셋팅 메서드
 		setSize(final_Layout.PAGE_WIDTH,final_Layout.PAGE_HEIGHT);
 		setVisible(true); 
