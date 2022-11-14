@@ -20,19 +20,19 @@ public class order_page extends JFrame{
 			list_checkedList;
 		
 	
-	/*private JButton btn_add,
+	private JButton btn_add,
 			btn_delete,
 			btn_orderConfirm,
 			btn_orderTap,
 			btn_recommendTap,
-			btn_calNum[] ;*/
+			btn_calNum[] ;
 	
 	private JTextField 	jtf_searchProduct,
 				jtf_inputNum,
 				jtf_totalPrice;
 	private JTextArea jta_productInformation;
 	
-	private JPanel panelWest,panelCenter,panelEast;
+	//private JPanel panelWest,panelCenter,panelEast;
 	
 	public order_page() {
 		mkSetting(); // make page setting
