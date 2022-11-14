@@ -30,9 +30,9 @@ public class order_page extends JFrame{
 	private JTextField 	jtf_searchProduct,
 				jtf_inputNum,
 				jtf_totalPrice;
-//	private JTextArea jta_productInformation;
+	private JTextArea jta_productInformation;
 	
-	//private JPanel panelWest,panelCenter,panelEast;
+	private JPanel panelWest,panelCenter,panelEast;
 	
 	public order_page() {
 		mkSetting(); // make page setting
