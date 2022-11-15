@@ -3,10 +3,12 @@ import java.awt.*;
 import javax.swing.*;
 import java.awt.event.*;
 
-class DeleteEvent2 implements ActionListener{
+class DeleteEvent2 implements ItemListener{
+	
 	
 	@Override
-	public void actionPerformed(ActionEvent e) {
+	public void itemStateChanged(ItemEvent e) {
+		
 		
 	}
 }
@@ -42,7 +44,10 @@ public class Delete_Staff_Frame extends JFrame {
 		btn_panel.add(Delete);
 		btn_panel.add(btn_backMain);
 		
-	
+		DeleteEvent2 del=new DeleteEvent2();
+		
+		
+
 		
 		for(int i=0;i<info.length;i++) {
 			
