@@ -3,6 +3,7 @@ import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.FlowLayout;
+import java.awt.GridLayout;
 import java.awt.event.ItemEvent;
 import java.awt.event.ItemListener;
 import java.util.ArrayList;
@@ -11,6 +12,7 @@ import javax.swing.JButton;
 import javax.swing.JCheckBox;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JList;
 import javax.swing.JPanel;
 
 class DeleteEvent2 implements ItemListener{
@@ -60,6 +62,7 @@ public class Delete_Staff_Frame extends JFrame {
 	JPanel btn_panel=new JPanel();
 	
 	JLabel[]lis=new JLabel[info.length];
+	JList info2=new JList(info); 
 	
 	Delete_Staff_Frame(){
 	
@@ -74,27 +77,35 @@ public class Delete_Staff_Frame extends JFrame {
 		staff_main_panel.setBounds(50,25,800,800);
 		staff_main_panel.setBackground(Color.LIGHT_GRAY);
 		
-		btn_panel.setLayout(new FlowLayout());
+		btn_panel.setLayout(new GridLayout(0,1));
+		btn_panel.setBounds(875, 25, 300, 800);
+		btn_panel.setBackground(Color.green);
+		
+		Delete.setPreferredSize(new Dimension(300,100));
+		btn_backMain.setPreferredSize(new Dimension(300,100));
+		
+		
 		btn_panel.add(Delete);
 		btn_panel.add(btn_backMain);
 		
-		
-
+		main_panel.add(btn_panel);
 		
 		for(int i=0;i<info.length;i++) {
 			
 			listA.add(info[i]);
-			JCheckBox staff_button=new JCheckBox();
+			JCheckBox staff_checkBox=new JCheckBox();
 			JPanel staff_paneli=new JPanel();
 			
 			
 			
 			staff_paneli.add(lis[i]=new JLabel(listA.get(i)));
-			staff_button.add(lis[i]);
+			staff_checkBox.add(lis[i]);
 			
-			DeleteEvent2 Del2=new DeleteEvent2(listA,staff_button);
+			
+			
+			DeleteEvent2 Del2=new DeleteEvent2(listA,staff_checkBox);
 			Delete.addItemListener(Del2);
-			staff_paneli.add(staff_button);
+			staff_paneli.add(staff_checkBox);
 			staff_paneli.setPreferredSize(new Dimension(270,200));
 			staff_main_panel.add(staff_paneli);
 			
