@@ -110,8 +110,7 @@ public class Management_Staff_Frame extends JFrame{
 		btn_panel.add(Revise);
 		btn_panel.add(btn_backMain);
 		
-		Delete.setBackground(Color.red);
-		Add.setBackground(Color.green);
+	
 		
 	
 		
