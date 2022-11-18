@@ -11,6 +11,7 @@ import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JList;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 
@@ -77,7 +78,7 @@ public class Management_Staff_Frame extends JFrame{
 	
 	DeleteEvent del=new DeleteEvent();
 	
-	//Delete.addActionListener(del);
+	
 	
 	Management_Staff_Frame(){
 	
@@ -100,7 +101,7 @@ public class Management_Staff_Frame extends JFrame{
 		Delete.setPreferredSize(new Dimension(350,200));
 		Calculate.setPreferredSize(new Dimension(350,200));
 		
-		
+	
 		
 		btn_panel.add(Add);
 		btn_panel.add(Delete);

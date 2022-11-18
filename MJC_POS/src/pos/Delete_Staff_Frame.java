@@ -1,20 +1,54 @@
 package pos;
-import java.awt.*;
-import javax.swing.*;
-import java.awt.event.*;
+import java.awt.BorderLayout;
+import java.awt.Color;
+import java.awt.Dimension;
+import java.awt.FlowLayout;
+import java.awt.event.ItemEvent;
+import java.awt.event.ItemListener;
+import java.util.ArrayList;
+
+import javax.swing.JButton;
+import javax.swing.JCheckBox;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
 
 class DeleteEvent2 implements ItemListener{
 	
+	String []info;
+	JCheckBox staff_btni;
+	ArrayList<String> listA;
+	
+	DeleteEvent2(ArrayList<String> listA,JCheckBox staff_btni){
+		
+		this.staff_btni=staff_btni;
+		this.listA=listA;
+		
+	}
 	
 	@Override
 	public void itemStateChanged(ItemEvent e) {
 		
+		for(int i=0;i<info.length;i++) {
+			
+			if(e.getStateChange() == ItemEvent.SELECTED) {
+				
+				listA.remove(i);
+				
+			}
+			
+			new Delete_Staff_Frame();
+		}
+		
 		
 	}
+	
 }
 
 public class Delete_Staff_Frame extends JFrame {
 	
+	ArrayList<String> listA = new ArrayList<String>();
+	 
 	String info[]= {"10hours n만원 Park","20hours n만원 Lee","33hours n만원 Choi",
 			"10hours n만원 Park","20hours n만원 Lee","33hours n만원 Choi",
 			"10hours n만원 Park","20hours n만원 Lee","33hours n만원 Choi"};//임의로 넣은 값임.나중에 db에서 가져오기
@@ -44,24 +78,29 @@ public class Delete_Staff_Frame extends JFrame {
 		btn_panel.add(Delete);
 		btn_panel.add(btn_backMain);
 		
-		DeleteEvent2 del=new DeleteEvent2();
-		
 		
 
 		
 		for(int i=0;i<info.length;i++) {
 			
+			listA.add(info[i]);
 			JCheckBox staff_button=new JCheckBox();
 			JPanel staff_paneli=new JPanel();
 			
-			staff_paneli.add(lis[i]=new JLabel(info[i]));
+			
+			
+			staff_paneli.add(lis[i]=new JLabel(listA.get(i)));
 			staff_button.add(lis[i]);
 			
-			
+			DeleteEvent2 Del2=new DeleteEvent2(listA,staff_button);
+			Delete.addItemListener(Del2);
 			staff_paneli.add(staff_button);
 			staff_paneli.setPreferredSize(new Dimension(270,200));
 			staff_main_panel.add(staff_paneli);
+			
 		}
+		
+		
 		
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setVisible(true);
@@ -70,6 +109,7 @@ public class Delete_Staff_Frame extends JFrame {
 	}
 	
 	public static void main(String[] args) {
+		
 		// TODO Auto-generated method stub
 		new Delete_Staff_Frame();
 	}
