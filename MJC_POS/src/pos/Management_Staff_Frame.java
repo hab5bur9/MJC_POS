@@ -120,7 +120,7 @@ public class Management_Staff_Frame extends JFrame{
 			
 			JPanel staff_paneli=new JPanel();
 			JPanel img_paneli=new JPanel();
-			JLabel img_staff_i = new JLabel(new ImageIcon("images/ecmyeong1.jpg"));
+			JLabel img_staff_i = new JLabel(new ImageIcon("img/anonymous.png"));
 			
 			staff_paneli.add(img_paneli);
 			staff_paneli.setLayout(new FlowLayout(FlowLayout.LEFT,0,0));
