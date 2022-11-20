@@ -11,6 +11,7 @@ import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JList;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 
@@ -77,7 +78,7 @@ public class Management_Staff_Frame extends JFrame{
 	
 	DeleteEvent del=new DeleteEvent();
 	
-	//Delete.addActionListener(del);
+	
 	
 	Management_Staff_Frame(){
 	
@@ -85,7 +86,7 @@ public class Management_Staff_Frame extends JFrame{
 		setTitle("직원 관리");
 		
 		add(main_panel);
-		add(btn_panel,BorderLayout.EAST);
+		
 		main_panel.add(sp);
 		
 		main_panel.setLayout(null);
@@ -94,13 +95,14 @@ public class Management_Staff_Frame extends JFrame{
 		staff_main_panel.setLayout(new FlowLayout(FlowLayout.LEFT,80,50));
 		staff_main_panel.setBounds(50,25,800,800);
 		staff_main_panel.setBackground(Color.LIGHT_GRAY);
+		
 		btn_panel.setLayout(new GridLayout(0,1));
-		
-		Add.setPreferredSize(new Dimension(350,200));
-		Delete.setPreferredSize(new Dimension(350,200));
-		Calculate.setPreferredSize(new Dimension(350,200));
+		btn_panel.setBounds(875, 25, 300, 800);
+		btn_panel.setBackground(Color.green);
 		
 		
+		main_panel.add(btn_panel);
+	
 		
 		btn_panel.add(Add);
 		btn_panel.add(Delete);
@@ -108,9 +110,9 @@ public class Management_Staff_Frame extends JFrame{
 		btn_panel.add(Revise);
 		btn_panel.add(btn_backMain);
 		
-		Delete.setBackground(Color.red);
-		Add.setBackground(Color.green);
+	
 		
+	
 		
 		
 		for(int i=0;i<info.length;i++) {
