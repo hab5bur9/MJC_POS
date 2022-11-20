@@ -1,17 +1,15 @@
 package pos;
-import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.FlowLayout;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-
+import java.awt.event.*;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
-import javax.swing.JList;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 
@@ -23,14 +21,7 @@ class AddEvent implements ActionListener{
 	}
 }
 
-class DeleteEvent implements ActionListener{
-	
-	@Override
-	public void actionPerformed(ActionEvent e) {
-		//직원삭제
-		new Delete_Staff_Frame();//라디오버튼으로 전환
-	}
-}
+
 
 class CalculateEvent implements ActionListener{
 	@Override
@@ -76,12 +67,13 @@ public class Management_Staff_Frame extends JFrame{
 	
 	JLabel lis[]=new JLabel[info.length];
 	
-	DeleteEvent del=new DeleteEvent();
+	
 	
 	
 	
 	Management_Staff_Frame(){
 	
+		
 		
 		setTitle("직원 관리");
 		
@@ -110,7 +102,24 @@ public class Management_Staff_Frame extends JFrame{
 		btn_panel.add(Revise);
 		btn_panel.add(btn_backMain);
 		
-	
+		Delete.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				setVisible(false);
+				new Delete_Staff_Frame();
+			}
+			
+		});
+		
+		btn_backMain.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				setVisible(false);
+				new POS_main();
+			}
+		});
 		
 	
 		
