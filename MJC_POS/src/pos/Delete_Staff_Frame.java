@@ -42,7 +42,7 @@ class DeleteEvent2 implements ItemListener{
 				
 			}
 			
-			new Delete_Staff_Frame();
+		
 		}
 		
 		
@@ -102,10 +102,16 @@ btn_backMain.addActionListener(new ActionListener() {
 				new Management_Staff_Frame();
 			}
 		});
+
+
+
+		for(int j=0;j<info.length;j++) {
+			listA.add(info[j]);
+		}
 		
-		for(int i=0;i<info.length;i++) {
+		for(int i=0;i<listA.size();i++) {
 			
-			listA.add(info[i]);
+			
 			JCheckBox staff_checkBox=new JCheckBox();
 			JPanel staff_paneli=new JPanel();
 			JPanel img_paneli=new JPanel();

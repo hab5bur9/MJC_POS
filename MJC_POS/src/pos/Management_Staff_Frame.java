@@ -63,7 +63,7 @@ public class Management_Staff_Frame extends JFrame{
 	JButton Delete=new JButton("직원 삭제");
 	JButton Calculate=new JButton("급여 정산");
 	JButton Revise=new JButton("정보 수정");
-	JButton btn_backMain=new JButton("돌아가기");
+	JButton btn_backMain=new JButton("메인메뉴");
 	
 	JLabel lis[]=new JLabel[info.length];
 	
