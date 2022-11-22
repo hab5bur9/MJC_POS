@@ -16,6 +16,11 @@ public class Add_Staff_Frame extends JFrame{
 	JButton btn_backMain=new JButton("돌아가기");
 	JButton btn_save=new JButton("저장");
 	
+	JTextField name_txt=new JTextField();
+	JTextField age_txt=new JTextField();
+	JTextField phone_txt=new JTextField();
+	JTextArea Adress_txt=new JTextArea();
+	
 	Add_Staff_Frame(){
 		
 		setTitle("직원 추가");
@@ -31,12 +36,20 @@ public class Add_Staff_Frame extends JFrame{
 		text_panel.add(age);
 		text_panel.add(phone_number);
 		text_panel.add(Adress);
+		text_panel.add(name_txt);
+		text_panel.add(age_txt);
+		text_panel.add(phone_txt);
+		text_panel.add(Adress_txt);
 		
 		btn_backMain.setBounds(870,720,300,100);
 		name.setBounds(50, 50, 100, 100);
 		age.setBounds(50, 200, 100, 100);
 		phone_number.setBounds(50, 350, 300, 100);
 		Adress.setBounds(50, 500, 100, 100);
+		
+		name_txt.setBounds(130, 90, 200, 30);
+		age_txt.setBounds(120, 240, 200, 30);
+		phone_txt.setBounds(210, 390,270 , 30);
 		
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setVisible(true);
