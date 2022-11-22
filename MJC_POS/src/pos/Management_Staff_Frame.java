@@ -121,7 +121,13 @@ public class Management_Staff_Frame extends JFrame{
 			}
 		});
 		
-	
+	Add.addActionListener(new ActionListener() {
+		
+		public void actionPerformed(ActionEvent e) {
+			dispose();
+			new Add_Staff_Frame();
+		}
+	});
 		
 		
 		for(int i=0;i<info.length;i++) {
