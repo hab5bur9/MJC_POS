@@ -21,6 +21,8 @@ public class Add_Staff_Frame extends JFrame{
 	JTextField phone_txt=new JTextField();
 	JTextArea Adress_txt=new JTextArea();
 	
+	JScrollPane sp=new JScrollPane();
+	
 	Add_Staff_Frame(){
 		
 		setTitle("직원 추가");
@@ -50,6 +52,8 @@ public class Add_Staff_Frame extends JFrame{
 		name_txt.setBounds(130, 90, 200, 30);
 		age_txt.setBounds(120, 240, 200, 30);
 		phone_txt.setBounds(210, 390,270 , 30);
+		Adress_txt.setBounds(120, 540, 300, 100);
+			
 		
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setVisible(true);
