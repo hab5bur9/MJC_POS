@@ -8,10 +8,13 @@ public class Add_Staff_Frame extends JFrame{
 	JPanel main_panel=new JPanel();
 	JPanel text_panel=new JPanel();
 	
+	
+	JLabel ec=new JLabel(new ImageIcon("img/anonymous2.png"));
 	JLabel name = new JLabel("이름(name):");
 	JLabel age= new JLabel("나이(age):");
 	JLabel phone_number=new JLabel("핸드폰 번호(phone number):");
 	JLabel Adress=new JLabel("자택주소:");
+	JLabel namei=new JLabel();
 	
 	JButton btn_backMain=new JButton("돌아가기");
 	JButton btn_save=new JButton("저장");
@@ -35,6 +38,7 @@ public class Add_Staff_Frame extends JFrame{
 		main_panel.add(text_panel);
 		main_panel.add(btn_backMain);
 		main_panel.add(btn_empty);
+		main_panel.add(ec);
 		
 		text_panel.add(name);
 		text_panel.add(age);
@@ -47,6 +51,7 @@ public class Add_Staff_Frame extends JFrame{
 		text_panel.add(btn_save);
 		
 		
+		ec.setBounds(870, 27, 300, 300);
 		btn_empty.setBounds(870, 600, 300, 100);
 		btn_backMain.setBounds(870,720,300,100);
 		name.setBounds(50, 50, 100, 100);
@@ -54,11 +59,13 @@ public class Add_Staff_Frame extends JFrame{
 		phone_number.setBounds(50, 350, 300, 100);
 		Adress.setBounds(50, 500, 100, 100);
 		
+		
 		name_txt.setBounds(130, 90, 200, 30);
 		age_txt.setBounds(120, 240, 200, 30);
 		phone_txt.setBounds(210, 390,270 , 30);
 		Adress_txt.setBounds(120, 540, 300, 100);
-		btn_save.setBounds(100,680 , 300, 100);	
+		btn_save.setBounds(150,680 , 200, 100);	
+		
 		
 		
 		btn_backMain.addActionListener(new ActionListener() {
