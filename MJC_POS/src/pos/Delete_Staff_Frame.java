@@ -98,7 +98,7 @@ btn_backMain.addActionListener(new ActionListener() {
 			
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				setVisible(false);
+				dispose();
 				new Management_Staff_Frame();
 			}
 		});

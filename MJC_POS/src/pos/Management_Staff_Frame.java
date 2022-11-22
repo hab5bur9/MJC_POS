@@ -106,7 +106,7 @@ public class Management_Staff_Frame extends JFrame{
 			
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				setVisible(false);
+				dispose();
 				new Delete_Staff_Frame();
 			}
 			
@@ -116,7 +116,7 @@ public class Management_Staff_Frame extends JFrame{
 			
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				setVisible(false);
+				dispose();
 				new POS_main();
 			}
 		});
