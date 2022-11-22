@@ -55,6 +55,16 @@ public class Add_Staff_Frame extends JFrame{
 		Adress_txt.setBounds(120, 540, 300, 100);
 			
 		
+		
+		btn_backMain.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				dispose();
+				new Management_Staff_Frame();
+			}
+		});
+		
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setVisible(true);
 		setSize(1200,900);
