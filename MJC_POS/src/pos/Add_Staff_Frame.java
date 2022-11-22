@@ -21,7 +21,7 @@ public class Add_Staff_Frame extends JFrame{
 	JTextField phone_txt=new JTextField();
 	JTextArea Adress_txt=new JTextArea();
 	
-	JScrollPane sp=new JScrollPane();
+	JScrollPane sp=new JScrollPane(Adress_txt);
 	
 	Add_Staff_Frame(){
 		
