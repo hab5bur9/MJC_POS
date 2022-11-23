@@ -39,7 +39,7 @@ public class Add_Staff_Frame extends JFrame{
 		
 		
 		//main_panel.add(ec);
-		
+		text_panel.add(sp);
 		text_panel.add(name);
 		text_panel.add(age);
 		text_panel.add(phone_number);
