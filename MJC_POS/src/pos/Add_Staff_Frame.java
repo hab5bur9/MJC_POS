@@ -28,7 +28,7 @@ public class Add_Staff_Frame extends JFrame{
 	JScrollPane sp=new JScrollPane(Adress_txt);
 	
 	Add_Staff_Frame(){
-		
+		//어디 고쳐봐라 선지성 ㄹㅇㅋㅋ
 		setTitle("직원 추가");
 		add(main_panel);
 		main_panel.setLayout(null);
