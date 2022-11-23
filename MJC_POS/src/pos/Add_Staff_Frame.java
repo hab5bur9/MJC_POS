@@ -37,7 +37,7 @@ public class Add_Staff_Frame extends JFrame{
 		text_panel.setBackground(Color.LIGHT_GRAY);
 		main_panel.add(text_panel);
 		main_panel.add(btn_backMain);
-		main_panel.add(btn_empty);
+		
 		//main_panel.add(ec);
 		
 		text_panel.add(name);
@@ -49,10 +49,10 @@ public class Add_Staff_Frame extends JFrame{
 		text_panel.add(phone_txt);
 		text_panel.add(Adress_txt);
 		text_panel.add(btn_save);
-		
+		text_panel.add(btn_empty);
 		
 		//ec.setBounds(870, 27, 300, 300);
-		btn_empty.setBounds(870, 600, 300, 100);
+		btn_empty.setBounds(300, 650, 150, 100);
 		btn_backMain.setBounds(870,720,300,100);
 		name.setBounds(15, 50, 100, 100);
 		age.setBounds(15, 200, 100, 100);
@@ -64,7 +64,7 @@ public class Add_Staff_Frame extends JFrame{
 		age_txt.setBounds(130, 240, 200, 30);
 		phone_txt.setBounds(190, 390,270 , 30);
 		Adress_txt.setBounds(120, 540, 300, 100);
-		btn_save.setBounds(150,680 , 200, 100);	
+		btn_save.setBounds(270,650 , 150, 100);	
 		
 		
 		
