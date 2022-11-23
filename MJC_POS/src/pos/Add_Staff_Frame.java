@@ -89,6 +89,14 @@ public class Add_Staff_Frame extends JFrame{
 				Adress_txt.setText(" ");
 			}
 		});
+		
+		btn_save.addActionListener(new ActionListener() {
+			
+			public void actionPerformed(ActionEvent e) {
+				JOptionPane.showMessageDialog(null, "저장되었습니다!", "MJC_POS", JOptionPane.INFORMATION_MESSAGE);
+			}
+		});
+		
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setVisible(true);
 		setSize(500,800);
