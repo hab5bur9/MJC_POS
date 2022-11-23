@@ -12,7 +12,7 @@ public class Add_Staff_Frame extends JFrame{
 	//JLabel ec=new JLabel(new ImageIcon("img/anonymous2.png"));
 	JLabel name = new JLabel("이름(name):");
 	JLabel age= new JLabel("나이(age):");
-	JLabel phone_number=new JLabel("핸드폰 번호(phone number):");
+	JLabel phone_number=new JLabel("핸드폰 번호(phone):");
 	JLabel Adress=new JLabel("자택주소:");
 	JLabel namei=new JLabel();
 	
@@ -36,7 +36,7 @@ public class Add_Staff_Frame extends JFrame{
 		text_panel.setBounds(0 , 0, 500, 800);
 		text_panel.setBackground(Color.LIGHT_GRAY);
 		main_panel.add(text_panel);
-		main_panel.add(btn_backMain);
+		
 		
 		//main_panel.add(ec);
 		
@@ -50,21 +50,23 @@ public class Add_Staff_Frame extends JFrame{
 		text_panel.add(Adress_txt);
 		text_panel.add(btn_save);
 		text_panel.add(btn_empty);
+		text_panel.add(btn_backMain);
 		
 		//ec.setBounds(870, 27, 300, 300);
-		btn_empty.setBounds(300, 650, 150, 100);
-		btn_backMain.setBounds(870,720,300,100);
+		btn_save.setBounds(290,650 , 140, 100);	
+		btn_empty.setBounds(130, 650, 140, 100);
+		btn_backMain.setBounds(335,15,140,30);
 		name.setBounds(15, 50, 100, 100);
 		age.setBounds(15, 200, 100, 100);
 		phone_number.setBounds(15, 350, 300, 100);
 		Adress.setBounds(15, 500, 100, 100);
 		
 		
-		name_txt.setBounds(130, 90, 200, 30);
-		age_txt.setBounds(130, 240, 200, 30);
-		phone_txt.setBounds(190, 390,270 , 30);
-		Adress_txt.setBounds(120, 540, 300, 100);
-		btn_save.setBounds(270,650 , 150, 100);	
+		name_txt.setBounds(130, 90, 150, 30);
+		age_txt.setBounds(130, 240, 150, 30);
+		phone_txt.setBounds(130, 390,150 , 30);
+		Adress_txt.setBounds(130, 540, 300, 100);
+	
 		
 		
 		
