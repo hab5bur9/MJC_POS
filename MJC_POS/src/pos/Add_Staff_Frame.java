@@ -38,7 +38,7 @@ public class Add_Staff_Frame extends JFrame{
 		main_panel.add(text_panel);
 		main_panel.add(btn_backMain);
 		main_panel.add(btn_empty);
-		main_panel.add(ec);
+		//main_panel.add(ec);
 		
 		text_panel.add(name);
 		text_panel.add(age);
