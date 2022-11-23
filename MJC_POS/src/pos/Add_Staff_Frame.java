@@ -92,10 +92,13 @@ public class Add_Staff_Frame extends JFrame{
 		
 		btn_save.addActionListener(new ActionListener() {
 			
-			
+			@Override
 			public void actionPerformed(ActionEvent e) {
 				
 				JOptionPane.showMessageDialog(null, "저장되었습니다!", "MJC_POS", JOptionPane.INFORMATION_MESSAGE);
+				//db, management프레임에 판넬 추가 기능 넣기
+				dispose();
+				new Management_Staff_Frame();
 			}
 		});
 		
