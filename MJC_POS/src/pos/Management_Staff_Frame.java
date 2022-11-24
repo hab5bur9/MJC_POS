@@ -1,17 +1,15 @@
 package pos;
-import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.FlowLayout;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-
+import java.awt.event.*;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
-import javax.swing.JList;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 
@@ -23,14 +21,7 @@ class AddEvent implements ActionListener{
 	}
 }
 
-class DeleteEvent implements ActionListener{
-	
-	@Override
-	public void actionPerformed(ActionEvent e) {
-		//직원삭제
-		new Delete_Staff_Frame();//라디오버튼으로 전환
-	}
-}
+
 
 class CalculateEvent implements ActionListener{
 	@Override
@@ -72,16 +63,17 @@ public class Management_Staff_Frame extends JFrame{
 	JButton Delete=new JButton("직원 삭제");
 	JButton Calculate=new JButton("급여 정산");
 	JButton Revise=new JButton("정보 수정");
-	JButton btn_backMain=new JButton("돌아가기");
+	JButton btn_backMain=new JButton("메인메뉴");
 	
 	JLabel lis[]=new JLabel[info.length];
 	
-	DeleteEvent del=new DeleteEvent();
+	
 	
 	
 	
 	Management_Staff_Frame(){
 	
+		
 		
 		setTitle("직원 관리");
 		
@@ -110,9 +102,32 @@ public class Management_Staff_Frame extends JFrame{
 		btn_panel.add(Revise);
 		btn_panel.add(btn_backMain);
 		
-	
+		Delete.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				dispose();
+				new Delete_Staff_Frame();
+			}
+			
+		});
 		
-	
+		btn_backMain.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				dispose();
+				new POS_main();
+			}
+		});
+		
+	Add.addActionListener(new ActionListener() {
+		
+		public void actionPerformed(ActionEvent e) {
+			dispose();
+			new Add_Staff_Frame();
+		}
+	});
 		
 		
 		for(int i=0;i<info.length;i++) {
@@ -120,7 +135,7 @@ public class Management_Staff_Frame extends JFrame{
 			
 			JPanel staff_paneli=new JPanel();
 			JPanel img_paneli=new JPanel();
-			JLabel img_staff_i = new JLabel(new ImageIcon("images/ecmyeong1.jpg"));
+			JLabel img_staff_i = new JLabel(new ImageIcon("img/anonymous.png"));
 			
 			staff_paneli.add(img_paneli);
 			staff_paneli.setLayout(new FlowLayout(FlowLayout.LEFT,0,0));
