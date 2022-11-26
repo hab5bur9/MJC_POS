@@ -5,6 +5,7 @@ import java.util.Calendar;
 import java.awt.*;
 
 public class Frame_SalesInquiry extends JFrame {
+	
 	Frame_SalesInquiry(){
 		//프레임 기본 설정
 		setTitle("매출조회");
