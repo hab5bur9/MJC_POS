@@ -1,6 +1,7 @@
 package pos;
 import javax.swing.*;
 import java.awt.event.*;
+import java.util.Calendar;
 import java.awt.*;
 
 public class Frame_MainMenu extends JFrame{
@@ -10,7 +11,9 @@ public class Frame_MainMenu extends JFrame{
 		setTitle("메인메뉴");
 		setSize(1200,900);
 		setVisible(true);
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setLocationRelativeTo(null);// 화면 가운데서 창이 나옴
+		setResizable(false);//정해진사이즈에서 변경불가
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);// 안정적으로 JFrame이 종료되게 해줌
 		
 		Container ct = getContentPane();
 		ct.setLayout(null); //setBounds 사용하기 위해 null
@@ -31,6 +34,7 @@ public class Frame_MainMenu extends JFrame{
 		btn_staff.setBounds(1000,10,100,130);
 		
 		JButton btn_staffChange = new JButton("근무자 변경");
+		btn_staffChange.addActionListener(new Event_btn_staffChange());
 		btn_staffChange.setBounds(950, 150, 200, 50);
 		
 		ct.add(p_notice);
@@ -121,7 +125,7 @@ public class Frame_MainMenu extends JFrame{
 		
 		JButton btn_salesInquiry = new JButton("매출 조회");
 		btn_salesInquiry.setBounds(1010, 770, 160, 80);
-		ct.add(btn_salesInquiry);
+		//ct.add(btn_salesInquiry);
 		
 		JButton btn_calendar = new JButton("캘린더");
 		btn_calendar.setBounds(820, 770, 160, 80);
@@ -129,98 +133,44 @@ public class Frame_MainMenu extends JFrame{
 		
 		JButton btn_madeBy = new JButton("만든이들");
 		btn_madeBy.setBounds(1010, 770, 160, 80);
+		btn_madeBy.addActionListener(new Event_btn_madeBy());
 		ct.add(btn_madeBy);
 		
 		ct.revalidate();
 		ct.repaint();
+		
+		//실시간 시간 출력
+		while(true) {//무조건 실행
+			Calendar t=Calendar.getInstance();
+			int amPm = t.get(Calendar.AM_PM);//오전/오후를 받아온다
+			int hour = t.get(Calendar.HOUR);//시를 받아온다
+			int min = t.get(Calendar.MINUTE);//분을 받아온다
+			int sec = t.get(Calendar.SECOND);//초를 받아온다
+			String ampm=amPm==Calendar.AM? "PM":"AM";//비교해서 pm이나 am을 ampm에 저장
+			String time=(ampm+" "+hour+":"+min+":"+sec+" sec");//time라는 문자열에 저장
+			lab_info[0].setText(time);//second의 내용을 time(string)으로 설정한다.
+			//실시간 시간을 반영하기 위해 0.1초마다 lab_time을 repaint
+			try { //트라이 
+				Thread.sleep(1000);//0.1초
+				lab_info[0].repaint();
+		    } catch(Exception e) {} //예외처리
+		}//while문 끝
 	}
 	
+	private class Event_btn_madeBy implements ActionListener{
+		@Override
+		public void actionPerformed(ActionEvent e) {
+			new Creators();
+		}
+	}
+	
+	private class Event_btn_staffChange implements ActionListener{
+		@Override
+		public void actionPerformed(ActionEvent e) {
+			new StaffChange();
+		}
+	}
 	public static void main(String[] args) {
 		new Frame_MainMenu();
 	}
-	
-
-public class HintTextField extends JTextField {  
-
-	  
-
-	  Font gainFont = new Font("굴림", Font.PLAIN, 15);  
-
-	  Font lostFont = new Font("굴림", Font.ITALIC, 15);  
-
-	  
-
-	  public HintTextField(final String hint) {  
-
-	  
-
-	    setText(hint);  
-
-	    setFont(lostFont);  
-
-	    setForeground(Color.GRAY);  
-
-	  
-
-	    this.addFocusListener(new FocusAdapter() {  
-
-	  
-
-	      @Override  
-
-	      public void focusGained(FocusEvent e) {  
-
-	        if (getText().equals(hint)) {  
-
-	          setText("");  
-
-	          setFont(gainFont);  
-
-	        } else {  
-
-	          setText(getText());  
-
-	          setFont(gainFont);  
-
-	        }  
-
-	      }  
-
-	  
-
-	      @Override  
-
-	      public void focusLost(FocusEvent e) {  
-
-	        if (getText().equals(hint)|| getText().length()==0) {  
-
-	          setText(hint);  
-
-	          setFont(lostFont);  
-
-	          setForeground(Color.GRAY);  
-
-	        } else {  
-
-	          setText(getText());  
-
-	          setFont(gainFont);  
-
-	          setForeground(Color.BLACK);  
-
-	        }  
-
-	      }  
-
-
-
-	    });  
-
-	  
-
-	  }  
-
-	}  
-
-
 }
