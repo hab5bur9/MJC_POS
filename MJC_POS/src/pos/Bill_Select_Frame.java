@@ -40,8 +40,8 @@ public class Bill_Select_Frame extends JFrame implements ActionListener{
 		JPanel btn_panel = new JPanel();
 		JButton bill_output = new JButton("영수증 출력");
 		JButton refund = new JButton("환불");
-		bill_output.setPreferredSize(new Dimension(200 , 100));
-		refund.setPreferredSize(new Dimension(200 , 100));
+		bill_output.setPreferredSize(new Dimension(230 , 110));
+		refund.setPreferredSize(new Dimension(230 , 110));
 		btn_panel.add(bill_output);
 		btn_panel.add(refund);
 		
@@ -56,7 +56,7 @@ public class Bill_Select_Frame extends JFrame implements ActionListener{
 		main_panel.add(deal_product_panel);
 		deal_product_panel.setLayout(null);
 		deal_product_panel.add(deal_product_label_panel);
-		deal_product_panel.setBounds(100 , 50 , 350 , 790);
+		deal_product_panel.setBounds(50 , 50 , 350 , 790);
 		deal_product_label_panel.add(deal_product_label);
 		deal_product_label_panel.setBounds(0 , 0 , 350 , 80);
 		deal_product_label_panel.setBackground(Color.white);
@@ -68,7 +68,7 @@ public class Bill_Select_Frame extends JFrame implements ActionListener{
 		main_panel.add(deal_breakdown_panel);
 		deal_breakdown_panel.setLayout(null);
 		deal_breakdown_panel.add(deal_breakdown_label_panel);
-		deal_breakdown_panel.setBounds(500 , 50 , 350 , 790);
+		deal_breakdown_panel.setBounds(450 , 50 , 350 , 790);
 		deal_breakdown_label_panel.add(deal_breakdown_label);
 		deal_breakdown_label_panel.setBounds(0,0,350,80);
 		deal_breakdown_label_panel.setBackground(Color.white);
@@ -78,14 +78,14 @@ public class Bill_Select_Frame extends JFrame implements ActionListener{
 			
 		
 		main_panel.add(calender_panel);
-		calender_panel.setBounds(900, 50 , 200 , 300);
+		calender_panel.setBounds(850, 50 , 300 , 300);
 		
 		main_panel.add(product_detail_panel);
-		product_detail_panel.setBounds(900 , 390 , 200 , 180);
+		product_detail_panel.setBounds(850 , 390 , 300 , 180);
 		
 		main_panel.add(btn_panel);
-		btn_panel.setBounds(900 , 580 , 200 , 300);
-		btn_panel.setLayout(new FlowLayout(FlowLayout.CENTER , 10, 30));
+		btn_panel.setBounds(850 , 580 , 300 , 300);
+		btn_panel.setLayout(new FlowLayout(FlowLayout.CENTER , 10, 20));
 		btn_panel.setBackground(Color.white);
 		
 		
