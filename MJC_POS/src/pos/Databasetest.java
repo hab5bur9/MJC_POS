@@ -18,7 +18,7 @@ public class Databasetest {
 	
 		try {
 			
-			con = (Connection)DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/MJC_POS" , "root" , "root");
+			con = (Connection)DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/POS" , "root" , "root");
 			st = con.createStatement();
 			
 			if(con != null) {
