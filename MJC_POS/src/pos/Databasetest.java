@@ -22,7 +22,11 @@ public class Databasetest {
 			st = con.createStatement();
 			
 			if(con != null) {
-				System.out.println("데이터베이스가 연결되었습니다 ");
+				
+				String sql = "show tables;";
+			    
+			    int affectedCount = st.executeUpdate(sql);
+			    System.out.println("데이터베이스가 연결되었습니다 ");
 				
 			}
 		}
