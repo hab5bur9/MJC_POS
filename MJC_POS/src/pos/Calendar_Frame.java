@@ -155,6 +155,6 @@ public class Calendar_Frame extends JFrame implements ActionListener {
    }
 
    public static void main(String[] args) {
-      new Frame_Calendar();
+      new Calendar_Frame();
    }
 }

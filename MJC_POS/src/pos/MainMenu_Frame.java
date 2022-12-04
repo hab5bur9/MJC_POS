@@ -183,22 +183,36 @@ public class MainMenu_Frame extends JFrame{
    private class Event_btn implements ActionListener{
       @Override
       public void actionPerformed(ActionEvent e) {
-         if(e.getSource() == btn_staffChange)
-            new Change_Staff_Frame();
-         else if(e.getSource() ==  btn_group[0])
-            ;//판매 프레임
-         else if(e.getSource() == btn_group[1])
-            ;//영수증 조회 프레임
-         else if(e.getSource() == btn_group[2])
-            ;//발주 프레임
-         else if(e.getSource() == btn_group[3])
-            ;//재고 관리 프레임
-         else if(e.getSource() == btn_group2[2])
-            ;//직원 관리 프레임
+         if(e.getSource() == btn_staffChange) {
+        	 dispose();
+        	 new Change_Staff_Frame();
+         }
+         else if(e.getSource() ==  btn_group[0]) {
+        	 dispose();
+        	 new Sell_Frame();//판매 프레임
+         }
+         else if(e.getSource() == btn_group[1]) {
+        	 dispose();
+             new Bill_Select_Frame();//영수증 조회 프레임
+         }
+         else if(e.getSource() == btn_group[2]) {
+        	 dispose();
+        	 ;//발주 프레임  	 
+         }
+         else if(e.getSource() == btn_group[3]) {
+        	 dispose();
+        	 ;//재고 관리 프레임
+         }
+         else if(e.getSource() == btn_group2[2]) {
+        	 dispose();
+        	 new Management_Staff_Frame();//직원 관리 프레임
+         }
          else if(e.getSource() == btn_group2[3])
             new Calendar_Frame();//캘린더 프레임
-         else if(e.getSource() == btn_group2[4])
-            ;//매출 조회 프레임
+         else if(e.getSource() == btn_group2[4]) {
+        	 dispose();
+        	 new SalesInquiry_Frame();//매출 조회 프레임
+         }
          else if(e.getSource() == btn_group2[5])
             new Creators_Frame();//만든이들 프레임
       }
