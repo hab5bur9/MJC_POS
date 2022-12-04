@@ -31,6 +31,7 @@ public class SalesInquiry_Frame extends JFrame {
 
       JButton btn_back = new JButton("돌아가기");
       btn_back.setBounds(1090,0,100,30);
+      btn_back.addActionListener(new Event_back());
       ct.add(btn_back);
 
       now = Calendar.getInstance();
@@ -204,6 +205,15 @@ public class SalesInquiry_Frame extends JFrame {
          select_date = year + "년 " + month + "월 " + b.getText()+"일";
          JOptionPane.showMessageDialog(null, "날짜가 선택 되었습니다.");
       }     
+   }
+   
+   //메인메뉴로 돌아가는 이벤트
+   class Event_back implements ActionListener{
+	   @Override
+	   public void actionPerformed(ActionEvent e) {
+		   dispose();
+		   new MainMenu_Frame();
+	   }
    }
 
    public static void main(String[] args) {
