@@ -184,7 +184,7 @@ public class MainMenu_Frame extends JFrame{
       @Override
       public void actionPerformed(ActionEvent e) {
          if(e.getSource() == btn_staffChange)
-            new StaffChange();
+            new Change_Staff_Frame();
          else if(e.getSource() ==  btn_group[0])
             ;//판매 프레임
          else if(e.getSource() == btn_group[1])

@@ -133,7 +133,7 @@ public class Management_Staff_Frame extends JFrame{
 			
 			public void actionPerformed(ActionEvent e) {
 				dispose();
-				new Change_Staff_Frame();
+				new Revise_Staff_Frame();
 			}
 		});
 	
