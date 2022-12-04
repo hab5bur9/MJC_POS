@@ -4,10 +4,10 @@ import java.awt.event.*;
 import java.util.Calendar;
 import java.awt.*;
 
-public class Frame_MainMenu extends JFrame{
+public class MainMenu_Frame extends JFrame{
    JButton[] btn_group, btn_group2;
    JButton btn_staffChange;
-   Frame_MainMenu(){
+   MainMenu_Frame(){
       //프레임 기본 설정
       setTitle("메인메뉴");
       setSize(1200,900);
@@ -205,6 +205,6 @@ public class Frame_MainMenu extends JFrame{
    }
 
    public static void main(String[] args) {
-      new Frame_MainMenu();
+      new MainMenu_Frame();
    }
 }

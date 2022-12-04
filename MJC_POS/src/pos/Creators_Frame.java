@@ -4,10 +4,10 @@ import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
 
-public class Creators extends JFrame implements ActionListener{
+public class Creators_Frame extends JFrame implements ActionListener{
 
    JButton btn_ER, btn_cancel;
-   Creators(){
+   Creators_Frame(){
       //프레임 기본 설정
       setTitle("메인메뉴");
       setSize(300, 400);

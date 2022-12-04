@@ -5,7 +5,7 @@ import java.util.*;
 import javax.swing.*;
 
 
-public class Frame_Calendar extends JFrame implements ActionListener {
+public class Calendar_Frame extends JFrame implements ActionListener {
    JPanel pan1, pan2, pan3, pan4;
    JLabel day_of_the_week, year_and_month, blank;
    JButton day, next, back, btn_cancel;
@@ -17,7 +17,7 @@ public class Frame_Calendar extends JFrame implements ActionListener {
    Calendar now;
    static String select_date;
 
-   Frame_Calendar(){
+   Calendar_Frame(){
       setTitle("달력"); // 프레임 창 제목
       setLayout(new FlowLayout(FlowLayout.LEFT));
       now = Calendar.getInstance();

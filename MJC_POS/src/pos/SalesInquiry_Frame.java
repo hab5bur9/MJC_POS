@@ -4,7 +4,7 @@ import java.awt.event.*;
 import java.util.Calendar;
 import java.awt.*;
 
-public class Frame_SalesInquiry extends JFrame {
+public class SalesInquiry_Frame extends JFrame {
    JPanel pan1, pan2, pan3, pan_calendar, pan_periodSet;
    JLabel day_of_the_week, year_and_month, blank;
    JButton day, next, back;
@@ -16,7 +16,7 @@ public class Frame_SalesInquiry extends JFrame {
    Calendar now;
    static String select_date;
 
-   Frame_SalesInquiry(){
+   SalesInquiry_Frame(){
 
       //프레임 기본 설정
       setTitle("매출 조회");
@@ -207,6 +207,6 @@ public class Frame_SalesInquiry extends JFrame {
    }
 
    public static void main(String[] args) {
-      new Frame_SalesInquiry();
+      new SalesInquiry_Frame();
    }
 }
