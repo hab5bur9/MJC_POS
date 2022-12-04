@@ -1,13 +1,14 @@
 package pos;
-import javax.swing.*;
-import java.awt.event.*;
-import java.util.Calendar;
 import java.awt.*;
+import java.awt.event.*;
+import java.util.*;
+import javax.swing.*;
 
-public class Frame_SalesInquiry extends JFrame {
-	JPanel pan1, pan2, pan3, pan_calendar, pan_periodSet;
+
+public class Frame_Calendar extends JFrame implements ActionListener {
+	JPanel pan1, pan2, pan3, pan4;
 	JLabel day_of_the_week, year_and_month, blank;
-	JButton day, next, back;
+	JButton day, next, back, btn_cancel;
 	String[] week = {"일", "월", "화", "수", "목", "금", "토"};
 	ImageIcon img = new ImageIcon("./images/next.png");
 	ImageIcon img2 = new ImageIcon("./images/back.png");
@@ -16,33 +17,15 @@ public class Frame_SalesInquiry extends JFrame {
 	Calendar now;
 	static String select_date;
 
-	Frame_SalesInquiry(){
-
-		//프레임 기본 설정
-		setTitle("매출 조회");
-		setSize(1200,900);
-		setVisible(true);
-		setLocationRelativeTo(null);// 화면 가운데서 창이 나옴
-		setResizable(false);//정해진사이즈에서 변경불가
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);// 안정적으로 JFrame이 종료되게 해줌
-
-		Container ct = getContentPane();
-		ct.setLayout(null); //setBounds 사용하기 위해 null
-
-		JButton btn_back = new JButton("돌아가기");
-		btn_back.setBounds(1090,0,100,30);
-		ct.add(btn_back);
-
+	Frame_Calendar(){
+		setTitle("달력"); // 프레임 창 제목
+		setLayout(new FlowLayout(FlowLayout.LEFT));
 		now = Calendar.getInstance();
-		year = now.get(Calendar.YEAR); 
-		y_str = year + "";
-		month = now.get(Calendar.MONTH) +1; 
-		m_str = month + "";
+		year = now.get(Calendar.YEAR); y_str = year + "";
+		month = now.get(Calendar.MONTH) +1; m_str = month + "";
 
 		pan1 = new JPanel();
-		pan1.setBounds(100, 100, 330, 30);
-		pan1.setBackground(Color.lightGray);
-		ct.add(pan1);
+		pan1.setPreferredSize(new Dimension(330, 30));
 
 		next = new JButton(img);
 		next.setBorderPainted(false); // 버튼 테두리 설정 해제
@@ -55,15 +38,15 @@ public class Frame_SalesInquiry extends JFrame {
 		year_and_month = new JLabel(y_str + "년 " + m_str + "월 ");
 
 		// 년, 월, 전 월, 다음 월 component 있는 panel 생성
+		add(pan1);
 		pan1.add(back);
 		pan1.add(year_and_month);
 		pan1.add(next);
 
 		// 일~월 component 있는 panel 생성
 		pan2 = new JPanel(new FlowLayout(FlowLayout.LEFT));
-		pan2.setBackground(Color.lightGray);
-		pan2.setBounds(100, 130, 330, 30);
-		ct.add(pan2);
+		pan2.setPreferredSize(new Dimension(345, 20));
+		add(pan2);
 		for(int i = 0 ; i < 7 ; i++) {
 			day_of_the_week = new JLabel(week[i]);
 			day_of_the_week.setHorizontalAlignment(JLabel.CENTER);
@@ -74,14 +57,10 @@ public class Frame_SalesInquiry extends JFrame {
 
 		// 현재 날짜의 달력 출력
 		pan3 = new JPanel(new FlowLayout(FlowLayout.LEFT));
-		pan3.setBackground(Color.lightGray);
-		pan3.setBounds(100, 160, 330, 300);
-		ct.add(pan3);
+		pan3.setPreferredSize(new Dimension(345, 280));
+		add(pan3);
 		day = new JButton();
 		create_calendar();
-
-		//		Font font = new Font("맑은 고딕",Font.PLAIN , 5);
-		//		day.setFont(font);
 
 		// next 버튼 클릭 시 다음 달로 넘어가는 이벤트
 		next.addActionListener(new ActionListener() {
@@ -113,55 +92,20 @@ public class Frame_SalesInquiry extends JFrame {
 			}
 		});
 
-		String[] month_set = {"1월", "2월", "3월", "4월", "5월", "6월", "7월", "8월", "9월", "10월", "11월", "12월"};
-		String[] day_set = new String[31];
-		for(int i=0; i<day_set.length; i++)
-			day_set[i] = (i+1)+"일";
+		pan4 = new JPanel(new FlowLayout(FlowLayout.CENTER));
+		pan4.setPreferredSize(new Dimension(345, 100));
+		add(pan4);
+		btn_cancel = new JButton("닫기");
+		btn_cancel.addActionListener(this);
+		pan4.add(btn_cancel);
 
-		pan_periodSet = new JPanel();
-		pan_periodSet.setBounds(550, 50, 470, 200);
-		pan_periodSet.setBackground(Color.lightGray);
-		pan_periodSet.setLayout(null);
-		ct.add(pan_periodSet);
-
-		JLabel lab1 = new JLabel("조회 기간 설정");
-		lab1.setBounds(200, 10, 150, 30);
-		pan_periodSet.add(lab1);
-
-		JComboBox jcb_month = new JComboBox(month_set);
-		jcb_month.setBounds(50, 50, 70, 30);
-		pan_periodSet.add(jcb_month);
-		JComboBox jcb_day = new JComboBox(day_set);
-		jcb_day.setBounds(150, 50, 70, 30);
-		pan_periodSet.add(jcb_day);
-
-		JLabel lab2 = new JLabel("~");
-		lab2.setBounds(230, 50, 10, 30);
-		pan_periodSet.add(lab2);
-
-		JComboBox jcb_month2 = new JComboBox(month_set);
-		jcb_month2.setBounds(250, 50, 70, 30);
-		pan_periodSet.add(jcb_month2);
-		JComboBox jcb_day2 = new JComboBox(day_set);
-		jcb_day2.setBounds(350, 50, 70, 30);
-		pan_periodSet.add(jcb_day2);
-
-		JPanel pan_info = new JPanel();
-		pan_info.setBounds(550, 300, 470, 400);
-		pan_info.setBackground(Color.lightGray);
-		ct.add(pan_info);
-
-		JLabel lab3 = new JLabel("정보 나오는 패널");
-		pan_info.add(lab3);
-
-		JButton btn_search = new JButton("조   회");
-		btn_search.setBounds(650, 720, 270, 50);
-		ct.add(btn_search);
-		ct.revalidate();
-		ct.repaint();
-
+		// frame setting
+		setSize(350, 425); // frame size
+		setResizable(false); // 프레임 크기 변경 가능 여부
+		setLocationRelativeTo(null); 
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); // 프레임 종료 시 프로그램 종료
+		setVisible(true); // 프레임 나타남 여부
 	}
-
 
 	// 달력 교체
 	void replace_calendar() {
@@ -196,18 +140,22 @@ public class Frame_SalesInquiry extends JFrame {
 		day.setPreferredSize(new Dimension(40, 40));
 	}
 
-	// 날짜 선택 시 메세지 창 출력
+	// 날짜 선택 시 선택된 날짜 출력
 	class MyActionListener implements ActionListener {
 		@Override
 		public void actionPerformed(ActionEvent e) {
 			JButton b = (JButton)e.getSource();
 			select_date = year + "년 " + month + "월 " + b.getText()+"일";
-			JOptionPane.showMessageDialog(null, "날짜가 선택 되었습니다.");
+			JOptionPane.showMessageDialog(null, select_date);
 		}     
+	}
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		dispose();
 	}
 
 	public static void main(String[] args) {
-		new Frame_SalesInquiry();
+		new Frame_Calendar();
 	}
 }
 
