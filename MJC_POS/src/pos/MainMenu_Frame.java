@@ -196,7 +196,7 @@ public class MainMenu_Frame extends JFrame{
          else if(e.getSource() == btn_group2[2])
             ;//직원 관리 프레임
          else if(e.getSource() == btn_group2[3])
-            new Frame_Calendar();//캘린더 프레임
+            new Calendar_Frame();//캘린더 프레임
          else if(e.getSource() == btn_group2[4])
             ;//매출 조회 프레임
          else if(e.getSource() == btn_group2[5])
