@@ -15,12 +15,16 @@ import javax.swing.JPanel;
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 
+import java.sql.*;
+
 
 public class LOGiN_Frame extends JFrame implements ActionListener{
 
 
 		JTextField ID_tf = new JTextField(10);
 		JPasswordField PW_tf = new JPasswordField(10);
+		boolean adminChecked;
+		String id, passwd;
 		
 		LOGiN_Frame(){
 		
@@ -98,19 +102,27 @@ public class LOGiN_Frame extends JFrame implements ActionListener{
 class Login_ActionListener implements ActionListener{
 		
 		public void actionPerformed(ActionEvent e) {
-
-		JOptionPane.showMessageDialog(null, "로그인 되었습니다.");
-
+			System.out.println(ID_tf.getText()+"\n"+PW_tf.getText()+"\n"+id+"\n"+passwd);
+			if(check_data()) {
+				adminChecked = true;
+				JOptionPane.showMessageDialog(null, "로그인 되었습니다.");
+				new MainMenu_Frame(adminChecked);
+				dispose();
+			}
+			else {
+				JOptionPane.showMessageDialog(null, "아이디 혹은 비밀번호를 다시 입력해주세요.");
+			}
 		}
 	}
+
 class Cancel_ActionListener implements ActionListener{
 	
 		public void actionPerformed(ActionEvent e) {
-			
 			ID_tf.setText("");
 			PW_tf.setText("");	
 		}
 }
+
 class PW_F_ActionListener implements ActionListener{
 		
 		public void actionPerformed(ActionEvent e) {
@@ -119,10 +131,45 @@ class PW_F_ActionListener implements ActionListener{
 		}
 	}
 
+// 데이터베이스에서 login 정보 확인
+boolean check_data() {
+	Connection con = null;
+	Statement st; // sql문장 실행
+	ResultSet rs; //실행된 결과
+	boolean flag = false;
+
+	try {
+		con = (Connection)DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/POS" , "root" , "root");
+		st = con.createStatement();
+		if(con != null) {
+			String sql = "select e_num, passwd from dept where e_num = 1";
+			rs = st.executeQuery(sql);	
+			while(rs.next()) {
+				if(ID_tf.getText().equals(rs.getString("e_num"))&&PW_tf.getText().equals(rs.getString("passwd"))){
+					flag = true;
+					System.out.println("로그인 성공");
+				}
+				else {
+					flag = false;
+					System.out.println("로그인 실패");		
+				}
+			}
+		}
+	}
+	catch(Exception e) {
+		flag = false;
+		System.out.println("로그인 실패 " + e.getMessage());
+	}
+	return flag;
+}
+
 	public static void main(String[] args) {
 		
 		new LOGiN_Frame();
 	}
 
 }
+
+
+
 

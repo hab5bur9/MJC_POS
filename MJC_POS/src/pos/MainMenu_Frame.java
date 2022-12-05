@@ -9,8 +9,10 @@ public class MainMenu_Frame extends JFrame implements Runnable{
 	JButton btn_staffChange;
 	private Thread thread;
 	JLabel[] lab_info;
-
-	MainMenu_Frame(){
+	
+	//adminChecked => 관리자 전용 버튼을 위한 변수
+	//true일 경우 관리자 전용 버튼 클릭 가능 , false일 경우 관리자 전용 버튼 클릭 불가능
+	MainMenu_Frame(boolean adminChecked){
 		//프레임 기본 설정
 		setTitle("메인메뉴");
 		setSize(1200,900);
@@ -21,10 +23,6 @@ public class MainMenu_Frame extends JFrame implements Runnable{
 
 		Container ct = getContentPane();
 		ct.setLayout(null); //setBounds 사용하기 위해 null
-
-		//관리자 전용 버튼을 위한 변수
-		//true일 경우 관리자 전용 버튼 클릭 가능 , false일 경우 관리자 전용 버튼 클릭 불가능
-		Boolean adminChecked = true;      
 
 		JPanel p_notice = new JPanel();
 		p_notice.setLayout(null);
@@ -242,6 +240,6 @@ public class MainMenu_Frame extends JFrame implements Runnable{
 	}
 
 	public static void main(String[] args) {
-		new MainMenu_Frame();
+		new MainMenu_Frame(true);
 	}
 }
