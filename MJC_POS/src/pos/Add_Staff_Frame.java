@@ -1,118 +1,90 @@
 package pos;
-import java.awt.*;
+
 import javax.swing.*;
-import java.awt.event.*;
+import java.awt.*;
 
-public class Add_Staff_Frame extends JFrame{
+import static java.awt.FlowLayout.RIGHT;
 
-	JPanel main_panel=new JPanel();
-	JPanel text_panel=new JPanel();
-	
-	
-	//JLabel ec=new JLabel(new ImageIcon("img/anonymous2.png"));
-	JLabel name = new JLabel("이름(name):");
-	JLabel age= new JLabel("나이(age):");
-	JLabel phone_number=new JLabel("핸드폰 번호(phone):");
-	JLabel Adress=new JLabel("자택주소:");
-	JLabel namei=new JLabel();
-	
-	JButton btn_backMain=new JButton("돌아가기");
-	JButton btn_save=new JButton("저장");
-	JButton btn_empty=new JButton("다시 쓰기");
-	
-	JTextField name_txt=new JTextField();
-	JTextField age_txt=new JTextField();
-	JTextField phone_txt=new JTextField();
-	JTextArea Adress_txt=new JTextArea();
-	
-	JScrollPane sp=new JScrollPane(Adress_txt);
-	
-	Add_Staff_Frame(){
-		//어디 고쳐봐라 선지성 ㄹㅇㅋㅋ
-		setTitle("직원 추가");
-		add(main_panel);
-		main_panel.setLayout(null);
-		text_panel.setLayout(null);
-		text_panel.setBounds(0 , 0, 500, 800);
-		text_panel.setBackground(Color.LIGHT_GRAY);
-		main_panel.add(text_panel);
-		
-		
-		//main_panel.add(ec);
-		text_panel.add(sp);
-		text_panel.add(name);
-		text_panel.add(age);
-		text_panel.add(phone_number);
-		text_panel.add(Adress);
-		text_panel.add(name_txt);
-		text_panel.add(age_txt);
-		text_panel.add(phone_txt);
-		text_panel.add(Adress_txt);
-		text_panel.add(btn_save);
-		text_panel.add(btn_empty);
-		text_panel.add(btn_backMain);
-		
-		//ec.setBounds(870, 27, 300, 300);
-		btn_save.setBounds(290,650 , 140, 100);	
-		btn_empty.setBounds(130, 650, 140, 100);
-		btn_backMain.setBounds(335,15,140,30);
-		name.setBounds(15, 50, 100, 100);
-		age.setBounds(15, 200, 100, 100);
-		phone_number.setBounds(15, 350, 300, 100);
-		Adress.setBounds(15, 500, 100, 100);
-		
-		
-		name_txt.setBounds(130, 90, 150, 30);
-		age_txt.setBounds(130, 240, 150, 30);
-		phone_txt.setBounds(130, 390,150 , 30);
-		Adress_txt.setBounds(130, 540, 300, 100);
-	
-		
-		
-		
-		btn_backMain.addActionListener(new ActionListener() {
-			
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				dispose();
-				new Management_Staff_Frame();
-			}
-		});
-		
-		btn_empty.addActionListener(new ActionListener() {
-			
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				name_txt.setText(" ");
-				age_txt.setText(" ");
-				phone_txt.setText(" ");
-				Adress_txt.setText(" ");
-			}
-		});
-		
-		btn_save.addActionListener(new ActionListener() {
-			
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				
-				JOptionPane.showMessageDialog(null, "저장되었습니다!", "MJC_POS", JOptionPane.INFORMATION_MESSAGE);
-				//db, management프레임에 판넬 추가 기능 넣기
-				dispose();
-				new Management_Staff_Frame();
-			}
-		});
-		
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setVisible(true);
-		setSize(500,800);
-		setPreferredSize(new Dimension(1200,900));
-	}
-	
+public class Add_Staff_Frame extends JFrame {
 
+    JLabel[] label_info = new JLabel[5]; //삽입 정보
+    JTextField text_name, text_age, text_phone, text_hour;  //삽입 텍스트
+    JTextArea text_adress; //삽입 텍스트
+    JButton btn_image, btn_check, btn_cancel; //이미지 선택, 확인, 취소
+    JLabel image_label; //이미지
+    ImageIcon icon = new ImageIcon("Image/unknown.JPG");
 
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		new Add_Staff_Frame();
-	}
+    String[] info_label = {"  이름          : ", "  나이          : ", "  전화번호  : ", "  주소          : ", "  시급          : "};
 
+    Add_Staff_Frame(){
+        Container ct = getContentPane();
+        ct.setLayout(new BorderLayout(0, 0));
+
+        JPanel top = new JPanel();
+        top.setLayout(new FlowLayout(FlowLayout.LEFT));
+        Image img = icon.getImage();
+        Image changeImg = img.getScaledInstance(100, 100, Image.SCALE_SMOOTH);
+        ImageIcon Img = new ImageIcon(changeImg);
+        image_label = new JLabel(Img);
+        btn_image = new JButton("이미지 선택");
+        top.add(image_label); top.add(btn_image);
+
+        JPanel left = new JPanel();
+        left.setLayout(new GridLayout(5, 1));
+        for(int i = 0 ; i < label_info.length; i++){   //정보 입력 레이블 생성
+            label_info[i] = new JLabel(info_label[i]);
+        }//for문
+        //이름 패널
+        JPanel p1 = new JPanel();
+        p1.setLayout(new FlowLayout(FlowLayout.LEFT));
+        text_name = new JTextField(13);
+        p1.add(label_info[0]); p1.add(text_name);
+        //나이패널
+        JPanel p2 = new JPanel();
+        p2.setLayout(new FlowLayout(FlowLayout.LEFT));
+        text_age = new JTextField(13);
+        p2.add(label_info[1]); p2.add(text_age);
+        //핸드폰 패널
+        JPanel p3 = new JPanel();
+        p3.setLayout(new FlowLayout(FlowLayout.LEFT));
+        text_phone = new JTextField(13);
+        p3.add(label_info[2]); p3.add(text_phone);
+        //주소 패널
+        JPanel p4 = new JPanel();
+        p4.setLayout(new FlowLayout(FlowLayout.LEFT));
+        text_adress = new JTextArea(2, 13);
+        p4.add(label_info[3]); p4.add(text_adress);
+        //시급 패널
+        JPanel p5 = new JPanel();
+        p5.setLayout(new FlowLayout(FlowLayout.LEFT));
+        text_hour = new JTextField(13);
+        p5.add(label_info[4]); p5.add(text_hour);
+
+        left.add(p1);
+        left.add(p2);
+        left.add(p3);
+        left.add(p4);
+        left.add(p5);
+
+        //확인 취소 버튼
+        JPanel bottom = new JPanel();
+        bottom.setLayout(new FlowLayout(RIGHT));
+        btn_check = new JButton("수정");
+        btn_cancel = new JButton("취소");
+        bottom.add(btn_check); bottom.add(btn_cancel);
+
+        ct.add(top, BorderLayout.NORTH);
+        ct.add(left, BorderLayout.WEST);
+        ct.add(bottom, BorderLayout.SOUTH);
+
+        setSize(300, 400);
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setVisible(true);
+        setTitle("정보 수정");
+    }
+
+    public static void main(String[] args) {
+        new Add_Staff_Frame();
+
+    }
 }

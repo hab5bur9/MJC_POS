@@ -208,10 +208,8 @@ public class MainMenu_Frame extends JFrame implements Runnable{
 	private class Event_btn implements ActionListener{
 		@Override
 		public void actionPerformed(ActionEvent e) {
-			if(e.getSource() == btn_staffChange) {
-				dispose();
+			if(e.getSource() == btn_staffChange)
 				new Change_Staff_Frame();
-			}
 			else if(e.getSource() ==  btn_group[0]) {
 				dispose();
 				new Sell_Frame();//판매 프레임
@@ -226,7 +224,7 @@ public class MainMenu_Frame extends JFrame implements Runnable{
 			}
 			else if(e.getSource() == btn_group[3]) {
 				dispose();
-				;//재고 관리 프레임
+				new Management_Stock_Frame();//재고 관리 프레임
 			}
 			else if(e.getSource() == btn_group2[2])
 				new Calendar_Frame();//캘린더 프레임
