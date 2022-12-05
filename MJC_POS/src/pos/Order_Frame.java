@@ -207,7 +207,7 @@ public class Order_Frame extends JFrame {
 		result.add(btn_orderConfirm);
 		return result;
 	}
-	private JPanel header(CardLayout cl) {
+	private JPanel header(final CardLayout cl) {
 		JPanel result;
 		JButton btn_tap;
 		
