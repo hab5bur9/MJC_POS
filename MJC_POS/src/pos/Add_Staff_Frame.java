@@ -69,7 +69,7 @@ public class Add_Staff_Frame extends JFrame {
         //확인 취소 버튼
         JPanel bottom = new JPanel();
         bottom.setLayout(new FlowLayout(RIGHT));
-        btn_check = new JButton("수정");
+        btn_check = new JButton("추가");
         btn_cancel = new JButton("취소");
         bottom.add(btn_check); bottom.add(btn_cancel);
 
@@ -80,7 +80,7 @@ public class Add_Staff_Frame extends JFrame {
         setSize(300, 400);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setVisible(true);
-        setTitle("정보 수정");
+        setTitle("직원 추가");
     }
 
     public static void main(String[] args) {
