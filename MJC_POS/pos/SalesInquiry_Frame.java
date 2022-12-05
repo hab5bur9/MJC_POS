@@ -1,4 +1,4 @@
-package pos;
+	package pos;
 import javax.swing.*;
 import java.awt.event.*;
 import java.util.Calendar;
@@ -80,9 +80,6 @@ public class SalesInquiry_Frame extends JFrame {
       ct.add(pan3);
       day = new JButton();
       create_calendar();
-
-      //      Font font = new Font("맑은 고딕",Font.PLAIN , 5);
-      //      day.setFont(font);
 
       // next 버튼 클릭 시 다음 달로 넘어가는 이벤트
       next.addActionListener(new ActionListener() {
