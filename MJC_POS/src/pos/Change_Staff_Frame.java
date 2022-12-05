@@ -1,118 +1,66 @@
 package pos;
-import javax.swing.*;
-import java.awt.event.*;
-import java.util.Calendar;
+
 import java.awt.*;
+import java.awt.event.*;
+import javax.swing.*;
 
-public class Change_Staff_Frame extends JFrame{
+public class Change_Staff_Frame extends JFrame implements ActionListener{
 
-	JPanel main_panel=new JPanel();
-	JPanel text_panel=new JPanel();
-	
-	
-	JLabel name = new JLabel("이름(name):");
-	JLabel age= new JLabel("나이(age):");
-	JLabel phone_number=new JLabel("핸드폰 번호(phone):");
-	JLabel Adress=new JLabel("자택주소:");
-	JLabel namei=new JLabel();
-	
-	JButton btn_backMain=new JButton("돌아가기");
-	JButton btn_change=new JButton("수정");
-	JButton btn_empty=new JButton("다시 쓰기");
-	
-	JTextField name_txt=new JTextField();
-	JTextField age_txt=new JTextField();
-	JTextField phone_txt=new JTextField();
-	JTextArea Adress_txt=new JTextArea();
-	
-	JScrollPane sp=new JScrollPane(Adress_txt);
-	
 	Change_Staff_Frame(){
 		//프레임 기본 설정
-		setTitle("정보 수정");
-		setSize(500, 800);
+		setTitle("메인메뉴");
+		setSize(400, 600);
 		setVisible(true);
 		setLocationRelativeTo(null);// 화면 가운데서 창이 나옴
 		setResizable(false);//정해진사이즈에서 변경불가
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);// 안정적으로 JFrame이 종료되게 해줌
 
-		add(main_panel);
-		main_panel.setLayout(null);
-		text_panel.setLayout(null);
-		text_panel.setBounds(0 , 0, 500, 800);
-		text_panel.setBackground(Color.LIGHT_GRAY);
-		main_panel.add(text_panel);
-		
-		
-		text_panel.add(sp);
-		text_panel.add(name);
-		text_panel.add(age);
-		text_panel.add(phone_number);
-		text_panel.add(Adress);
-		text_panel.add(name_txt);
-		text_panel.add(age_txt);
-		text_panel.add(phone_txt);
-		text_panel.add(Adress_txt);
-		text_panel.add(btn_change);
-		text_panel.add(btn_empty);
-		text_panel.add(btn_backMain);
-		
-		//ec.setBounds(870, 27, 300, 300);
-		btn_change.setBounds(290,650 , 140, 100);	
-		btn_empty.setBounds(130, 650, 140, 100);
-		btn_backMain.setBounds(335,15,140,30);
-		name.setBounds(15, 50, 100, 100);
-		age.setBounds(15, 200, 100, 100);
-		phone_number.setBounds(15, 350, 300, 100);
-		Adress.setBounds(15, 500, 100, 100);
-		
-		
-		name_txt.setBounds(130, 90, 150, 30);
-		age_txt.setBounds(130, 240, 150, 30);
-		phone_txt.setBounds(130, 390,150 , 30);
-		Adress_txt.setBounds(130, 540, 300, 100);
-	
-		
-		
-		
-		btn_backMain.addActionListener(new ActionListener() {
-			
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				dispose();
-				new Management_Staff_Frame();
-			}
-		});
-		
-		btn_empty.addActionListener(new ActionListener() {
-			
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				name_txt.setText(" ");
-				age_txt.setText(" ");
-				phone_txt.setText(" ");
-				Adress_txt.setText(" ");
-			}
-		});
-		
+		Container ct = getContentPane();
+		ct.setLayout(new FlowLayout());
+
+		JPanel p_staff = new JPanel();
+		p_staff.setPreferredSize(new Dimension(400, 400));
+		p_staff.setBackground(Color.WHITE);
+		ct.add(p_staff);
+
+		JLabel temp = new JLabel("근무자 리스트 들어갈 곳");
+		p_staff.add(temp);
+
+		JPasswordField jtf_passwd = new JPasswordField();
+		jtf_passwd.setPreferredSize(new Dimension(350, 50));
+		jtf_passwd.setHorizontalAlignment(JTextField.CENTER);
+		ct.add(jtf_passwd);
+
+		JButton btn_change = new JButton("변경");
+
 		btn_change.addActionListener(new ActionListener() {
-			
+
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				
-				JOptionPane.showMessageDialog(null, "수정되었습니다!", "MJC_POS", JOptionPane.INFORMATION_MESSAGE);
-				//db, management프레임에 판넬 추가 기능 넣기
-				dispose();
-				new Management_Staff_Frame();
+				;// 버튼 클릭 시 입력된 비밀번호와 선택된 근무자의 비밀번호가 일치하면 선택된 근무자로 변경되는 이벤트 처리
 			}
 		});
-		
-	}	
-	
+		ct.add(btn_change);
+
+		JButton btn_cancel = new JButton("닫기");
+
+		btn_cancel.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				dispose();
+			}
+		});
+		ct.add(btn_cancel);
+
+
+		ct.revalidate();
+		ct.repaint();
+
+
+	}
 	public static void main(String[] args) {
 		new Change_Staff_Frame();
 	}
-	
+
 }
-
-

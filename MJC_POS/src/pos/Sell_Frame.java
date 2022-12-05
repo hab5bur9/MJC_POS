@@ -16,7 +16,7 @@ import javax.swing.JTextArea;
 import javax.swing.border.BevelBorder;
 import javax.swing.border.EmptyBorder;
 
-public class SELL_FRAME extends JFrame implements ActionListener {
+public class Sell_Frame extends JFrame implements ActionListener {
 
 
 			int total;
@@ -28,7 +28,7 @@ public class SELL_FRAME extends JFrame implements ActionListener {
 
 		    
 
-		    SELL_FRAME(){
+		    Sell_Frame(){
 
         	setTitle("판매 테이블");
 	
@@ -204,7 +204,7 @@ class btn_cancleActionListener implements ActionListener{}
        
 public static void main(String[] args) {
     	
-    		new SELL_FRAME();
+    		new Sell_Frame();
 
     		
     		
