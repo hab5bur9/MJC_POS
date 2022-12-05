@@ -218,7 +218,7 @@ public class MainMenu_Frame extends JFrame implements Runnable{
 			}
 			else if(e.getSource() == btn_group[2]) {
 				dispose();
-				;//발주 프레임  	 
+				Order_Frame();//발주 프레임  	 
 			}
 			else if(e.getSource() == btn_group[3]) {
 				dispose();
