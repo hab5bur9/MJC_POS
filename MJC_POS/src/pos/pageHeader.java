@@ -9,23 +9,17 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
-public class pageHeader extends JFrame{
+public class pageHeader extends JPanel{
 	JButton btn_backMain;
 	JLabel label_currentTime;
-	JPanel header;
 	public pageHeader() {
-		
-		header = new JPanel();
-		//header.setPreferredSize(new Dimension(final_Layout.PAGE_WIDTH,final_Layout.HEADER_HEIGHT));
-		header.setLayout(new BorderLayout());
-		header.setBackground(final_Layout.HEADER_BACKGROUND);
-		
-		
+
+		setLayout(new BorderLayout());
+		setBackground(final_Layout.HEADER_BACKGROUND);
 		btn_backMain=new JButton(final_String.HEADER_BACKMENU);
 		label_currentTime=new JLabel("현재시간");
-		
-		header.add(label_currentTime,BorderLayout.CENTER);
-		header.add(btn_backMain,BorderLayout.EAST);
-		header.setBounds(0,0,1200,30);
+		add(label_currentTime,BorderLayout.CENTER);
+		add(btn_backMain,BorderLayout.EAST);
+		setBounds(0,0,1200,30);
 	}
 }
